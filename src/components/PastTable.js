@@ -19,7 +19,7 @@ import CalenderIcon from '../images/calendar.png'
 
 
 
-export default function UpcomingTable(props) {
+export default function PastTable(props) {
 
 
 
@@ -28,7 +28,7 @@ export default function UpcomingTable(props) {
 
 return(
 <>
-  <table border="1" className="pure-table pure-table-horizontal">
+  <table border="1" className="table striped">
   <tr> 
     <th>DATE</th>
     <th>CAMPAIGN</th>
@@ -56,9 +56,10 @@ return(
   
       <tr>
         <td>
-         <Typography>{ monthNames[parseInt(new Date(d.createdOn).toISOString().split('T')[0].split('-')[1])]+' '+new Date(d.createdOn).toISOString().split('T')[0].split('-')[0] +', '+new Date(d.createdOn).toISOString().split('T')[0].split('-')[2] }</Typography>
-        <Typography variant='caption'> {Math.floor((d.createdOn-new Date(new Date(Date.now()).toISOString().split('T')[0]).getTime())/86400000)} &nbsp; Days Ago  </Typography>
-        </td>        
+        <Typography>{ monthNames[parseInt(new Date(d.createdOn).toISOString().split('T')[0].split('-')[1])]+' '+new Date(d.createdOn).toISOString().split('T')[0].split('-')[0] +', '+new Date(d.createdOn).toISOString().split('T')[0].split('-')[2] }</Typography>
+        <Typography variant='caption'> {Math.floor((d.createdOn-new Date(new Date(Date.now()).toISOString().split('T')[0]).getTime())/86400000)} &nbsp; Days Ahead  </Typography>
+        </td>
+        
         <td>
           <table border='0'>
                 
@@ -75,7 +76,7 @@ return(
                 </tr>
             </table>
         </td>
-        <td><Modal data={d.price} /></td>
+        <td><Modal data={d} /></td>
         <td>
             <Button varient='small'><img src={FileIcon} height='25px' width='20px'  />CSV</Button>
             <Button><img src={ReportIcon} height='25px' width='20px' />Report</Button>
