@@ -55,7 +55,11 @@ return(
     return(
   
       <tr>
-        <td><Typography>{ monthNames[parseInt(new Date(d.createdOn).toISOString().split('T')[0].split('-')[1])]+' '+new Date(d.createdOn).toISOString().split('T')[0].split('-')[0] +', '+new Date(d.createdOn).toISOString().split('T')[0].split('-')[2] }</Typography></td>
+        <td>
+        <Typography>{ monthNames[parseInt(new Date(d.createdOn).toISOString().split('T')[0].split('-')[1])]+' '+new Date(d.createdOn).toISOString().split('T')[0].split('-')[0] +', '+new Date(d.createdOn).toISOString().split('T')[0].split('-')[2] }</Typography>
+        <Typography variant='caption'> {Math.floor((d.createdOn-new Date(new Date(Date.now()).toISOString().split('T')[0]).getTime())/86400000)} &nbsp; Days Ahead  </Typography>
+        </td>
+        
         <td>
           <table border='0'>
                 
