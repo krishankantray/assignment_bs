@@ -11,7 +11,6 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    margin: -10,
     padding:-10
     
   },
@@ -55,7 +54,7 @@ export default function App() {
             indicatorColor="primary"
             className={classes.appBar}
           >
-            <img src={logo} width="8%" height="8%" className={classes.logo} />
+            <img src={logo} width="10%" height="10%" className={classes.logo} />
           </AppBar>
         </Paper>
       </div>
